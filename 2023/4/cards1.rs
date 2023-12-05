@@ -65,7 +65,6 @@ fn find_winning(cards: Vec<(Vec<u32>, Vec<u32>)>) -> u32 {
                 } else {
                     points *= 2;
                 }
-                println!("{}", num)
             }
         }
 
