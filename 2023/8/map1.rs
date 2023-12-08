@@ -82,7 +82,7 @@ fn solve_maze(directions: String, locations: &Vec<(String, (String, String))>) -
         location = match direction {
             'L' => &locations[index].1.0,
             'R' => &locations[index].1.1,
-            _ => return Err(ParseError::InvalidDirectionError)
+            _   => return Err(ParseError::InvalidDirectionError)
         };
 
         if location == "ZZZ" {
