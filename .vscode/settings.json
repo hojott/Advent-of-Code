@@ -1,0 +1,17 @@
+{
+    "rust-analyzer.linkedProjects": [
+        {
+            "sysroot_src": "$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library",
+            "crates": [
+                {
+                    "root_module": "2023/10/pipes.rs",
+                    "edition": "2021",
+                    "deps": [],
+                },
+            ]
+        }
+    ],
+    "rust-analyzer.check.overrideCommand": [
+        "cd", "2023/10/", "&&", "cargo", "check", "--message-format=json"
+    ]
+}
