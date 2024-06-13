@@ -146,7 +146,7 @@ impl Location {
         weak_locs.insert(prev_i, &prev);
 
         match loc_names.as_slice()
-            .binary_search(|x: &String| x.cmp(&loc_name.to_string()))
+            .binary_search_by(|x| x.cmp(&loc_name.to_string()))
             {
             Ok(i) => return *weak_locs[i],
             Err(_) => { /* ignore */ }   
@@ -193,7 +193,7 @@ fn solve_maze(directions: String, locations: &Vec<Rc<Location>>) -> Result<u64, 
     let loc_i = locations.as_slice()
         .binary_search_by(|x| x.id.cmp(&"AAA".to_string()))
         .unwrap();
-    let mut location: Rc<Location> = locations[loc_i];
+    let mut location: Rc<Location> = locations[loc_i].clone();
     loop {
         let direction = directions.chars()
             .nth(steps % directions.len())
